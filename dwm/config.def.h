@@ -8,7 +8,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim        = ";";       /* Character used for separating status */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -69,9 +69,11 @@ static const char *flamcmd[]  = { "flameshot", "gui", NULL };
 #include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ Mod4Mask,						XK_c,	   spawn,		   SHCMD("chromium") },
-	{ Mod4Mask,						XK_b,	   spawn,		   SHCMD("brave-browser") },
-	{ MODKEY|ShiftMask,				XK_f,	   spawn,		   SHCMD("alacritty -e ranger") },
+	{ MODKEY,						XK_r,	   spawn,		   SHCMD("rofi -show run") },
+	{ MODKEY|ShiftMask,				XK_r,	   spawn,		   SHCMD("rofi -show drun") },
+	{ Mod4Mask,						XK_c,	   spawn,		   SHCMD("firefox") },
+	{ Mod4Mask,						XK_b,	   spawn,		   SHCMD("brave") },
+	{ MODKEY|ShiftMask,				XK_f,	   spawn,		   SHCMD("st -e ranger") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,						XK_s,	   spawn,	   	   {.v = flamcmd } },
